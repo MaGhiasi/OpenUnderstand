@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          submodules: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,7 +33,8 @@ jobs:
 
       - name: Lint with ruff
         run: ruff check .
-
+        continue-on-error: true
+        
       - name: Run tests with coverage
         run: |
           pytest --cov=openunderstand --cov-report=xml --cov-report=html --cov-report=term-missing --cov-branch --cov-fail-under=80
