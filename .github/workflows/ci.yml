@@ -60,3 +60,6 @@ jobs:
         with:
           name: pytest-results
           path: .pytest_cache/
+      
+      - name: Run Pynguin-generated tests
+        run: pytest tests/generated/ -v
