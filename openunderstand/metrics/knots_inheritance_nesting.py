@@ -4,7 +4,7 @@ from gen.javaLabeled.JavaParserLabeled import JavaParserLabeled
 from openunderstand.metrics.max_inheritance import FindAllInheritances
 from openunderstand.metrics.max_inheritance import FindAllClasses
 from openunderstand.metrics.max_nesting import MaxNesting
-from openunderstand.metrics.min_max_essential_knots import MinEssentialKnots
+# from openunderstand.metrics.min_max_essential_knots import MinEssentialKnots
 import os
 from fnmatch import fnmatch
 import argparse

@@ -2,7 +2,7 @@ from gen.javaLabeled.JavaParserLabeledListener import JavaParserLabeledListener
 from antlr4 import *
 from gen.javaLabeled.JavaParserLabeled import JavaParserLabeled
 from gen.javaLabeled.JavaLexer import JavaLexer
-from openunderstand.ounderstand.project import Project
+# from openunderstand.ounderstand.project import Project
 
 from openunderstand.metrics.utils_g10 import get_keys
 
