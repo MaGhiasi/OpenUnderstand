@@ -23,3 +23,8 @@ warn_return_any = true
 warn_unused_configs = true
 ignore_missing_imports = true
 exclude = ["test_analysis"]
+
+[tool.mutmut]
+source_paths = ["openunderstand/oudb/api.py"]
+runner = "pytest"
+backup = false
