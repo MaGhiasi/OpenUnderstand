@@ -36,9 +36,17 @@ jobs:
         continue-on-error: true
 
       - name: Run tests with coverage
-        run: |
-          pytest --cov=openunderstand --cov-report=    --cov-report=xml --cov-report=html --cov-report=term-missing --cov-branch
-        continue-on-error: true
+        # run: |
+        #   pytest --cov=openunderstand --cov-report=    --cov-report=xml --cov-report=html --cov-report=term-missing --cov-branch
+        run: pytest
+        # continue-on-error: true
+
+      - name: Run Pynguin-generated tests
+        run: pytest tests/generated/ --cov=openunderstand --cov-append --cov-report=
+        # run: pytest tests/generated/ -v
+      
+      - name: Verify coverage data exists
+        run: coverage debug data
 
       - name: Check branch coverage gate
         run: |
@@ -60,6 +68,4 @@ jobs:
         with:
           name: pytest-results
           path: .pytest_cache/
-      
-      - name: Run Pynguin-generated tests
-        run: pytest tests/generated/ -v
+    
