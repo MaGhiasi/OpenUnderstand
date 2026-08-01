@@ -130,6 +130,8 @@ celerybeat.pid
 .venv
 env/
 venv/
+mutants/
+pynguin-report/
 menv/
 .venv-wsl/
 ENV/

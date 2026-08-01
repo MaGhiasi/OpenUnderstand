@@ -4,7 +4,7 @@ import pytest
 from openunderstand.oudb.api import create_db, open as db_open
 
 DB_PATH = "tests/tmp_class_entity.oudb"
-PROJECT_DIR = "benchmark/calculator_app"  # adjust to the benchmark project you use
+PROJECT_DIR = "benchmark/calculator_app"
 
 @pytest.fixture(scope="module")
 def db():
@@ -22,7 +22,7 @@ def db():
     # Teardown logic
     database.close()
     del database
-    gc.collect()  # Forces garbage collection to release Windows file locks
+    gc.collect()
 
     if os.path.exists(DB_PATH):
         try:

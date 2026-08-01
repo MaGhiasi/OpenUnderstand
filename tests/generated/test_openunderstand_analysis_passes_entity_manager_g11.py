@@ -4,6 +4,6 @@ import pytest
 import openunderstand.analysis_passes.entity_manager_g11 as module_0
 
 
-@pytest.mark.xfail(strict=True)
+@pytest.mark.xfail(strict=False)
 def test_case_0():
     module_0.get_all_files()

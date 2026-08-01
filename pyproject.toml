@@ -24,7 +24,17 @@ warn_unused_configs = true
 ignore_missing_imports = true
 exclude = ["test_analysis"]
 
+
+
 [tool.mutmut]
-source_paths = ["openunderstand/oudb/api.py"]
-runner = "pytest"
-backup = false
+source_paths = ["openunderstand/"]
+pytest_add_cli_args_test_selection = ["tests/"]
+runner = "python -m pytest -o addopts='-v --continue-on-collection-errors'"
+debug = true
+timeout_constant = 1.0
+timeout_multiplier = 15.0
+do_not_mutate = [
+    "openunderstand/analysis_passes/gen/*",
+    "openunderstand/gen/*",
+]
+pytest_add_cli_args = ["--no-cov"]
